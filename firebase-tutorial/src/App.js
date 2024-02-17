@@ -10,7 +10,7 @@ function App() {
     // データベースから取得する
     const postData = collection(db, "posts")
     getDocs(postData).then((snapShot) => {
-      // console.log(snapShot.docs.map(doc => ({ ...doc.data() })));
+      console.log(snapShot.docs.map(doc => ({ ...doc.data() })));
       setPosts(snapShot.docs.map(doc => ({ ...doc.data() })));
     })
 
