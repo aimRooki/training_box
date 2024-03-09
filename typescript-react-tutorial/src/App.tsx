@@ -47,6 +47,15 @@ const userA: USER = {
   password: "yyy",
 }
 
+// Union Types こうしておけば再代入時も型を制限できる
+let value: boolean | number;
+value = true;
+value = 10;
+
+let arrayUni: (number | string)[];
+// 配列もこうやって書ける
+arrayUni = [0, 1, 2, "Hello", true];
+
 function App() {
   return (
     <div className="App">
