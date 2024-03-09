@@ -78,7 +78,8 @@ type CAR = {
 let carType: CAR = { toyota: "small cat" };
 let newCar: typeof carType = { toyota: "big cat" };
 
-// keyof インターセクションタイプ（objectで定義した型）で指定したものをユニオンタイプとして指定できる
+// keyof
+// インターセクションタイプ（objectで定義した型）で指定したものをユニオンタイプとして指定できる
 type KEYS = {
   primary: string;
   secondary: string;
@@ -87,6 +88,7 @@ let key: keyof KEYS;
 key = "primary";
 
 // typeof + keyof
+// typeofで型継承を行いつつ、keyofでユニオン型の指定とした組み合わせ
 const SPORTS = {
   soccer: "Soccer",
   baseball: "Baseball",
@@ -94,6 +96,25 @@ const SPORTS = {
 let keySports: keyof typeof SPORTS;
 keySports = "soccer";
 
+// enum 
+// 列挙型、こうする事であらかじめ指定した値しか入れられない
+enum OS {
+  windows,
+  Mac,
+  Linux,
+}
+interface PC {
+  id: number;
+  OSType: OS;
+}
+const PC1: PC = {
+  id:1,
+  OSType: OS.windows,
+};
+const PC2: PC = {
+  id:2,
+  OSType: OS.Mac,
+};
 
 function App() {
   return (
