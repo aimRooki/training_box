@@ -56,6 +56,13 @@ let arrayUni: (number | string)[];
 // 配列もこうやって書ける
 arrayUni = [0, 1, 2, "Hello", true];
 
+// リテラルとユニオンタイプを組み合わせた例
+let company: "Facebook" | "Google" | "Amazone";
+company = "Amazone";
+
+let memory: 256 | 512;
+memory = 12;
+
 function App() {
   return (
     <div className="App">
