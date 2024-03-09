@@ -17,13 +17,34 @@ let array2 = [0, 1, "hello"];
 interface NAME {
   first: string;
   last: string | null;
-}
+};
 
-let nameOBJ: NAME = {first:"Yamada", last: null}
+let nameOBJ: NAME = {first:"Yamada", last: null};
 
 // 関数の後に「： number」と定義する事で返り値にも明示的に型を記述可能
 const func1 = (x: number, y: number): number => {
   return x + y;
+};
+
+//Intersection Types
+type PROFILE = {
+  age: number;
+  city: string;
+};
+
+type LOGIN = {
+  username: string;
+  password: string;
+};
+
+// 型を結合する事も可能Intersection Typesと言う
+type USER = PROFILE & LOGIN;
+
+const userA: USER = {
+  age: 30,
+  city: "Tokyo",
+  username: "xxx",
+  password: "yyy",
 }
 
 function App() {
