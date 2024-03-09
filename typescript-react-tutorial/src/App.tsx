@@ -74,9 +74,26 @@ let newAnimal: typeof animal = { cat: "big cat" };
 // できるが、ちゃんと書くなら　こう↓
 type CAR = {
   toyota: string
-}
+};
 let carType: CAR = { toyota: "small cat" };
 let newCar: typeof carType = { toyota: "big cat" };
+
+// keyof インターセクションタイプ（objectで定義した型）で指定したものをユニオンタイプとして指定できる
+type KEYS = {
+  primary: string;
+  secondary: string;
+};
+let key: keyof KEYS;
+key = "primary";
+
+// typeof + keyof
+const SPORTS = {
+  soccer: "Soccer",
+  baseball: "Baseball",
+};
+let keySports: keyof typeof SPORTS;
+keySports = "soccer";
+
 
 function App() {
   return (
