@@ -54,14 +54,29 @@ value = 10;
 
 let arrayUni: (number | string)[];
 // 配列もこうやって書ける
-arrayUni = [0, 1, 2, "Hello", true];
+arrayUni = [0, 1, 2, "Hello"];
 
 // リテラルとユニオンタイプを組み合わせた例
 let company: "Facebook" | "Google" | "Amazone";
 company = "Amazone";
 
 let memory: 256 | 512;
-memory = 12;
+memory = 512;
+
+// typeof　を使用した型継承
+let msg: string = "Hi";
+let msg2: typeof msg;
+msg2 = "hello";
+
+// typeofを使用して型推論のstringを継承。ただし基本的にはプロパティの方に明示的に型をつけるべき
+let animal = { cat: "small cat" };
+let newAnimal: typeof animal = { cat: "big cat" };
+// できるが、ちゃんと書くなら　こう↓
+type CAR = {
+  toyota: string
+}
+let carType: CAR = { toyota: "small cat" };
+let newCar: typeof carType = { toyota: "big cat" };
 
 function App() {
   return (
