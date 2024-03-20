@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Interface } from 'readline';
+import TestComponent from './TestComponent';
 
 const name = "hello";
 
@@ -181,10 +182,12 @@ const gen11 = funcGen3({price: 10});
 const funcGen4 = <T extends Props>(props: T) => {
   return { value: props.price };
 }
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <TestComponent text="Hello from App"/>
+      </header>
     </div>
   );
 }
