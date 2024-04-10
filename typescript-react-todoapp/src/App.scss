@@ -1,7 +1,26 @@
 .App {
-  .default {
-    background-color: #282c34;
-    min-height: 100vh;
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9e8ed;
+  background-image:
+  repeating-linear-gradient(
+    90deg, #e9e8ed, rgba(0,0,0,.05) 1px, transparent 1px, transparent 20px
+  ),
+  repeating-linear-gradient(
+    0deg, #e9e8ed, rgba(0,0,0,.05) 1px, #e9e8ed 1px, #e9e8ed 20px
+  );
+  min-height: 100vh;
+  color: #333;
+
+  .todo-wrap {
+    border-radius: 4px;
+    background:#fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    // box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    // box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    width: 600px;
+    height: 800px;
   }
 }
