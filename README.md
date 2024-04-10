@@ -1,2 +1,2 @@
 # training_box
-サンプルファイル
+React・TypeScriptの学習用ブランチ
